@@ -89,7 +89,7 @@ def test_lcs(df, lcs_word):
     # find the associated task type (one character, a-e)
     task = df.loc[test_index, 'Task']
     # we know that source texts have Class = -1
-    orig_rows = df[(df['Class'] == -1)]
+    orig_rows = df[(df['Category'] == -1)]
     orig_row = orig_rows[(orig_rows['Task'] == task)]
     source_text = orig_row['Text'].values[0]
     
@@ -111,7 +111,7 @@ def test_lcs(df, lcs_word):
         answer_text = df.loc[i, 'Text'] 
         task = df.loc[i, 'Task']
         # we know that source texts have Class = -1
-        orig_rows = df[(df['Class'] == -1)]
+        orig_rows = df[(df['Category'] == -1)]
         orig_row = orig_rows[(orig_rows['Task'] == task)]
         source_text = orig_row['Text'].values[0]
         # calc lcs
